@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<link href="https://i.postimg.cc/6pf9p7Mm/image.png" rel="icon"/>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAGAM4D</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://i.postimg.cc/6pf9p7Mm/image.png" rel="icon"/>
+
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="logo">
+<img src="https://i.ibb.co/pvWVSK4Y/Chat-GPT-Image-Jun-20-2026-02-18-21-AM.png">
+<div class="bigtitle">CLAIM SALDONYA SEKARANG JUGA !</div>
+
+<div class="card">
+<div class="label">MASUKKAN USERID</div>
+
+<div class="row">
+<input id="userid" placeholder="CONTOH: RAGAM01">
+<button type="button" class="btn2" onclick="resetForm()">HAPUS</button>
+</div>
+
+</div>
+
+<div class="card wheel-card">
+
+<div class="label">FREE SPIN WHEEL</div>
+
+<div class="pointer"></div>
+
+<div class="wheel-box">
+<canvas id="wheel" width="400" height="400"></canvas>
+</div>
+
+<button id="spinBtn">PUTAR SEKARANG</button>
+
+</div>
+</div>
+
+<div class="card recent-card">
+<div class="label">RECENT CLAIM</div>
+<div class="recent-list" id="recentList"></div>
+</div>
+
+<div class="popup" id="popup">
+    <div class="popbox">
+
+        <div class="pop-icon">
+            ✕
+        </div>
+
+        <div id="msg"></div>
+
+        <button onclick="closePopup()">OK</button>
+
+    </div>
+</div>
+
+  <div id="loading" class="loading">
+    <div class="loader"></div>
+    <div>MEMERIKSA USER ID...</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
