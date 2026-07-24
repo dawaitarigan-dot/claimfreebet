@@ -1,0 +1,657 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+    --gold:#ffd700;
+    --gold2:#ffae00;
+    --dark:#070707;
+    --card:rgba(20,20,20,.75);
+    --cyan:#00d9ff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.85)),
+    url('https://i.ibb.co/TqHJHwMt/0b2c821e-36bf-41ad-8ed7-adc500d06a72.png')
+    center/cover fixed no-repeat;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,rgba(255,215,0,.25),transparent 40%),
+    radial-gradient(circle at bottom,rgba(0,217,255,.15),transparent 40%);
+    pointer-events:none;
+}
+
+.wrap{
+    width:100%;
+    max-width:560px;
+    position:relative;
+    z-index:2;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:1px;
+}
+
+.logo img{
+    width:min(450px,100%);
+    animation:logoGlow 3s infinite alternate;
+}
+
+@keyframes logoGlow{
+    from{
+        filter:drop-shadow(0 0 15px gold);
+    }
+    to{
+        filter:drop-shadow(0 0 30px #00d9ff);
+    }
+}
+
+.label{
+    text-align:center;
+    font-family:'Orbitron',sans-serif;
+    font-size:24px;
+    font-weight:900;
+    letter-spacing:4px;
+
+    background:linear-gradient(90deg,#00eaff,#ffffff,#ffd700);
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:titleGlow 4s linear infinite;
+}
+
+@keyframes titleGlow{
+    from{background-position:0%;}
+    to{background-position:300%;}
+}
+
+.bigtitle{
+    font-family:'Orbitron',sans-serif;
+    color:#fff;
+    text-align:center;
+    font-size:clamp(28px,5vw,42px);
+    font-weight:900;
+    margin-top:-70px;
+    margin-bottom:15px;
+
+    text-shadow:
+    0 0 10px var(--gold),
+    0 0 25px var(--gold2),
+    0 0 45px #ff00ff;
+
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.03);
+    }
+}
+
+.card{
+    background:var(--card);
+    backdrop-filter:blur(20px);
+    border-radius:30px;
+    padding:22px;
+    margin-bottom:25px;
+    border:2px solid rgba(255,215,0,.5);
+
+    box-shadow:
+    0 0 35px rgba(255,215,0,.2),
+    inset 0 0 25px rgba(255,255,255,.05);
+}
+
+.label{
+    text-align:center;
+    font-family:'Orbitron',sans-serif;
+    color:var(--gold);
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:18px;
+    letter-spacing:3px;
+}
+
+.row{
+    display:flex;
+    gap:10px;
+}
+
+input{
+    flex:1;
+    height:58px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    padding:15px;
+    color:#fff;
+    font-size:18px;
+
+    background:rgba(255, 255, 255, 0);
+    border:2px solid rgba(255,215,0,.5);
+}
+
+input:focus{
+    box-shadow:0 0 20px gold;
+}
+
+.btn2{
+    width:120px;
+    border:none;
+    border-radius:20px;
+    color:#ffffff;
+    font-weight:700;
+    cursor:pointer;
+
+    background:linear-gradient(180deg,#ffe600,#ffb300);
+}
+
+.wheel-card{
+    text-align:center;
+    position:relative;
+}
+
+.pointer{
+    position:absolute;
+    top:78px;
+    left:50%;
+    transform:translateX(-50%);
+    width:0;
+    height:0;
+
+    border-left:22px solid transparent;
+    border-right:22px solid transparent;
+    border-top:40px solid gold;
+
+    z-index:10;
+
+    filter:
+    drop-shadow(0 0 10px gold)
+    drop-shadow(0 0 25px gold);
+}
+
+.wheel-box{
+    width:420px;
+    height:420px;
+
+    margin:0 auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle,#222,#090909);
+
+    border:8px solid gold;
+
+    box-shadow:
+        0 0 20px gold,
+        0 0 50px rgba(255,215,0,.6),
+        inset 0 0 35px rgba(255,255,255,.15);
+}
+
+canvas{
+    width:100%;
+    max-width:400px;
+    border-radius:50%;
+    transition:transform 6s cubic-bezier(.12,.85,.12,1);
+
+    filter:
+    drop-shadow(0 0 20px gold)
+    drop-shadow(0 0 40px rgba(255,0,255,.5));
+}
+
+#spinBtn{
+    margin-top:25px;
+    width:100%;
+    height:78px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+
+    font-family:'Orbitron',sans-serif;
+    font-size:30px;
+    font-weight:900;
+    color:#ffffff;
+
+    background:
+    linear-gradient(
+        90deg,
+        #fff7a0,
+        #ffd700,
+        #ff9d00,
+        #ffd700,
+        #fff7a0
+    );
+
+    background-size:300%;
+
+    box-shadow:
+    0 0 20px gold,
+    0 0 40px rgba(255,215,0,.8);
+
+    animation:shine 3s linear infinite;
+}
+
+#spinBtn:hover{
+    transform:translateY(-3px);
+}
+
+@keyframes shine{
+    from{
+        background-position:0%;
+    }
+    to{
+        background-position:300%;
+    }
+}
+
+/* ========================= */
+/* POPUP PREMIUM */
+/* ========================= */
+
+.popup{
+position:fixed;
+inset:0;
+
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(8px);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+opacity:0;
+visibility:hidden;
+
+transition:.35s ease;
+
+z-index:99999;
+}
+
+.popup.show{
+opacity:1;
+visibility:visible;
+}
+
+.popup.show .popbox{
+animation: popupBounce .55s cubic-bezier(.18,.89,.32,1.28);
+transform:scale(1) translateY(0);
+}
+
+@keyframes popupBounce{
+
+0%{
+transform:scale(.6) translateY(40px);
+opacity:0;
+}
+
+60%{
+transform:scale(1.06) translateY(-8px);
+opacity:1;
+}
+
+80%{
+transform:scale(.98);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+.popbox{
+
+    width:90%;
+    max-width:460px;
+
+    background:#101010;
+
+    border:3px solid #ff2d2d;
+
+    border-radius:25px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.05);
+
+    animation:popupBounce .35s;
+
+}
+
+.pop-icon{
+
+    width:140px;
+    height:140px;
+
+    margin:0 auto 30px;
+
+    border:5px solid #ff2d2d;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    color:#ff2d2d;
+
+    font-size:90px;
+
+    font-weight:bold;
+}
+
+#msg{
+
+    color:#fff;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:30px;
+
+    font-weight:900;
+
+    line-height:1.4;
+
+    margin-bottom:35px;
+
+    text-shadow:none;
+
+    background:none;
+
+    -webkit-text-fill-color:#fff;
+
+}
+
+.popbox button{
+
+    width:180px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ff2d2d;
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.popbox button:hover{
+
+    background:#ff5050;
+
+}
+
+@keyframes popupBounce{
+
+0%{
+
+transform:scale(.7);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.note{
+    text-align:center;
+    color:#ccc;
+    margin-top:10px;
+    font-size:13px;
+}
+
+@media(max-width:480px){
+
+    .bigtitle{
+        font-size:30px;
+    }
+
+    .label{
+        font-size:18px;
+    }
+
+    #spinBtn{
+        font-size:24px;
+        height:68px;
+    }
+
+    input{
+        font-size:15px;
+    }
+}
+
+.recent-list{
+    height:260px;
+    overflow:hidden;
+    position:relative;
+}
+
+.recent-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 16px;
+    margin-bottom:10px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,215,0,.25);
+
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+
+    animation:slideIn .5s ease;
+}
+
+.recent-item span:last-child{
+    color:#ffd700;
+    font-weight:700;
+}
+
+@keyframes slideIn{
+    from{
+        opacity:0;
+        transform:translateX(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}    
+.loading{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.8);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:#fff;
+    z-index:99999;
+}
+
+.loader{
+    width:60px;
+    height:60px;
+    border:6px solid rgba(255,255,255,.2);
+    border-top:6px solid gold;
+    border-radius:50%;
+    animation:spinloading 1s linear infinite;
+    margin-bottom:15px;
+}
+
+@keyframes spinloading{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+/* TABLET */
+@media (max-width:768px){
+
+    .wheel-box{
+        width:340px;
+        height:340px;
+    }
+
+    canvas{
+        max-width:320px;
+    }
+
+    .pointer{
+        top:72px;
+    }
+
+    #spinBtn{
+        font-size:22px;
+        height:64px;
+    }
+}
+
+/* HP */
+@media (max-width:480px){
+
+    .wheel-box{
+        width:280px;
+        height:280px;
+    }
+
+    canvas{
+        max-width:260px;
+    }
+
+    .pointer{
+        top:65px;
+        border-left:16px solid transparent;
+        border-right:16px solid transparent;
+        border-top:28px solid gold;
+    }
+
+    .label{
+        font-size:16px;
+    }
+
+    #spinBtn{
+        height:58px;
+        font-size:18px;
+    }
+
+    .row{
+        flex-direction:column;
+    }
+
+    .btn2{
+        width:100%;
+        height:50px;
+    }
+
+    input{
+        width:100%;
+    }
+}
+
+/* ===========================
+   POPUP HADIAH
+=========================== */
+
+.popbox.win-popup{
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(30,30,30,.95),
+        rgba(10,10,10,.98)
+    );
+
+    border:2px solid #ffd700;
+
+    box-shadow:
+        0 0 12px rgba(255,215,0,.45),
+        0 0 28px rgba(255,215,0,.20),
+        inset 0 0 18px rgba(255,255,255,.04);
+
+}
+
+.popbox.win-popup button{
+
+    color:#000;
+
+    background:
+    linear-gradient(
+        180deg,
+        #fff7a0,
+        #ffd700,
+        #ffb300
+    );
+
+    box-shadow:
+        0 0 10px rgba(255,215,0,.45);
+
+}
+
+.popbox.win-popup button:hover{
+
+    background:
+    linear-gradient(
+        180deg,
+        #fff8b8,
+        #ffe04d,
+        #ffbf3f
+    );
+
+}
