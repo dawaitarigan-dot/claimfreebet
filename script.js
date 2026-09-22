@@ -244,7 +244,7 @@ const hadiahRandom=[
 "Rp 100.000",
 "Rp 45.000",
 "Rp 70.000",
-"Rp ZONK",
+"Rp 80.000",
 ];
 
 function randomClaim(){
