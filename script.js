@@ -1,4 +1,4 @@
-const hadiah=["RP. 30.000","RP. 30.000","RP. 30.000","RP. ZONK","RP. 30.000","RP. 30.000","RP. ZONK","RP. 30.000"];
+const hadiah=["RP. 30.000","RP. 70.000","RP. 55.000","RP. ZONK","RP. 45.000","RP. 80.000","RP. ZONK","RP. 100.000"];
 
 const warna=[
 "#ffd700",
@@ -239,11 +239,11 @@ const namaRandom=[
 
 const hadiahRandom=[
 "Rp 30.000",
-"Rp 30.000",
-"Rp 30.000",
-"Rp ZONK",
-"Rp 30.000",
-"Rp 30.000",
+"Rp 55.000",
+"Rp 80.000",
+"Rp 100.000",
+"Rp 45.000",
+"Rp 70.000",
 "Rp ZONK",
 ];
 
