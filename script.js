@@ -203,7 +203,7 @@ let win=Math.floor(Math.random()*hadiah.length);
 spinBtn.disabled=false;
 
 spinBtn.onclick=()=>{
-    window.location.href="https://ragam4d03.com/";
+    window.location.href="https://ligabandar13.com/";
 };
         },6000);
 
