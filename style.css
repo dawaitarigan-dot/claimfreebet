@@ -26,7 +26,7 @@ body{
 
     background:
     linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.85)),
-    url('https://i.ibb.co/TqHJHwMt/0b2c821e-36bf-41ad-8ed7-adc500d06a72.png')
+    url('https://i.ibb.co/LXbpJ07M/image.png')
     center/cover fixed no-repeat;
 }
 
@@ -93,7 +93,7 @@ body::before{
     text-align:center;
     font-size:clamp(28px,5vw,42px);
     font-weight:900;
-    margin-top:-70px;
+    margin-top:-10px;
     margin-bottom:15px;
 
     text-shadow:
