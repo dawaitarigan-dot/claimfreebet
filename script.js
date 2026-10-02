@@ -1,4 +1,4 @@
-const hadiah=["RP. 25.000","RP. ZONK","RP. 25.000","RP. ZONK","RP. 25.000","RP. 25.000","RP. ZONK","RP. 100.000"];
+const hadiah=["RP. 25.000","RP. ZONK","RP. 25.000","RP. ZONK","RP. 25.000","RP. ZONK","RP. 25.000","RP. ZONK"];
 
 const warna=[
 "#ffd700",
